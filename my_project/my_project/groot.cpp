@@ -1,15 +1,35 @@
 #include "groot.h"
 
-float root() {
-	float number = 0;
-	std::cout << "Enter a number" << std::endl;
-	std::cin >> number;
-	return sqrt(number);
+
+double return_double()
+{
+	double number = 0;
+	cout << "Enter a number" << endl;
+	cin >> number;
+	if (!std::cin.fail()) {
+		return number;
+	}
+	return FAIL;
 }
 
-int main() {
-	float number = root();
-	std::cout << "The square root is: " << number << std::endl;
+bool is_not_negative(double num)
+{
+	return num >= 0;
+}
 
-	return 0;
+void root() {
+	double number = return_double();
+	if (!is_not_negative(number)) {
+		cout << "The input cannot be square rooted " << endl;
+		return;
+	}
+	cout << "The square root is: " << sqrt(number) << endl;
+}
+
+
+
+int main() {
+	root();
+
+	return SUCCESS;
 }
