@@ -7,9 +7,9 @@ void multiplication_table() {
 	{
 		for (j = 1; j <= TABLE_SIZE; j++)
 		{
-			std::cout << " " << i * j;
+			cout << " " << i * j;
 		}
-		std::cout << "" << std::endl;
+		cout << "" << endl;
 	}
 }
 
