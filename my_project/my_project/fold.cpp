@@ -1,19 +1,15 @@
 #include "fold.h"
 
-void multiplication_table() {
-	int i = 1;
-	int j = 1;
-	for (i = 1; i <= TABLE_SIZE; i++)
-	{
-		for (j = 1; j <= TABLE_SIZE; j++)
-		{
+void multiplicationTable() {
+	for (int i = 1; i <= TABLE_SIZE; i++) {
+		for (int j = 1; j <= TABLE_SIZE; j++) {
 			cout << " " << i * j;
 		}
-		cout << "" << endl;
+		cout << endl;
 	}
 }
 
 int main() {
-	multiplication_table();
+	multiplicationTable();
 	return SUCCESS;
 }

@@ -2,12 +2,14 @@
 #define MY_FOLD_H
 #include <iostream>
 
-const int SUCCESS = 0;
-const int TABLE_SIZE = 11;
+constexpr int SUCCESS = 0;
+constexpr int TABLE_SIZE = 11;
 
-using namespace std;
+using std::cin;
+using std::cout;
+using std::endl;
 
 //Prints the multiplication table
-void multiplication_table();
+void multiplicationTable();
 
-#endif
+#endif //MY_FOLD_H
