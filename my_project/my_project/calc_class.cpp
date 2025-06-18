@@ -32,4 +32,3 @@ double Calc::calculate(double num1, char operation, double num2) {
 	}
 	return 0;
 }
-
