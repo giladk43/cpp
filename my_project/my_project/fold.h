@@ -3,10 +3,6 @@
 
 constexpr int TABLE_SIZE = 11;
 
-using std::cin;
-using std::cout;
-using std::endl;
-
 //Prints the multiplication table
 void multiplicationTable();
 
