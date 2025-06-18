@@ -1,3 +1,4 @@
+#include <iostream>
 #include "fold.h"
 
 void multiplicationTable() {
@@ -11,5 +12,5 @@ void multiplicationTable() {
 
 int main() {
 	multiplicationTable();
-	return SUCCESS;
+	return 0;
 }
