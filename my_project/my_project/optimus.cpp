@@ -1,24 +1,46 @@
 #include "optimus.h"
+#include <iostream>
+
+using std::cin;
+using std::cout;
+using std::endl;
+
+void errorNegativeThrower() {
+	throw errorCodes::NEGATIVE_FAIL;
+}
 
 //Returns an int 
-int getIntFromInput() {
-	int number = 0;
+void getIntFromInput(int* number) {
 	cout << "Enter a number" << endl;
-	cin >> number;
-	if (cin) {
-		return number;
+	if (cin >> *number) {
+		return;
 	}
-	return static_cast<int>(ReturnValues::FAIL);
+	*number = -1;
 }
 
 bool isPrimeNumber() {
-	int number = getIntFromInput();
-	for (int i = 1; i <= number; i++) {
-		
+	int number = 0;
+	getIntFromInput(&number);
+	try {
+		if (number < 0)
+		{
+			errorNegativeThrower();
+		}
+		for (int i = 2; i < number; i++) {
+			if (number % i == 0) {
+				cout << "The number is not prime" << endl;
+				return false;
+			}
+		}
+		cout << "The number is prime" << endl;
 	}
+	catch (errorCodes errorCode) {
+		cout << "The input is not a valid input" << endl;
+	}
+	return true;
 }
 
 int main() {
-	int returnValue = isPrimeNumber();
-	return returnValue;
+	bool returnValue = isPrimeNumber();
+	return 0;
 }
