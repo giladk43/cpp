@@ -10,21 +10,15 @@ using std::endl;
 //Exception for a negative number
 class NegativeException : public std::exception
 {
-private:
-	std::string m_error{}; 
-
 public:
-	const char* what() const noexcept override { return m_error.c_str(); }
+	const char* what() const noexcept override { return "Negative excepetion found"; }
 };
 
 //Exception for an invalid input
 class InvalidInputException : public std::exception
 {
-private:
-	std::string m_error{}; 
-
 public:
-	const char* what() const noexcept override { return m_error.c_str(); }
+	const char* what() const noexcept override { return "Invalid input excepetion found"; }
 };
 
 
