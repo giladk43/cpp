@@ -1,27 +1,39 @@
 #include <cmath>
+#include <iostream>
 #include "groot.h"
 
-//Returns a double 
-double getDoubleFromInput() {
-	double number = 0;
-	cout << "Enter a number" << endl;
-	if (cin >> number) {
-		return number;
-	}
-	return static_cast<int>(ReturnValues::NOT_DOUBLE_FAIL);
+using std::cin;
+using std::cout;
+using std::endl;
+
+void errorNegativeThrower() {
+	throw errorCodes::NEGATIVE_FAIL;
 }
 
-int printSquareRoot() {
-	double number = getDoubleFromInput();
-	if (number < 0) {
-		cout << "The input cannot be square rooted " << endl;
-		return static_cast<int>(ReturnValues::NEGATIVE_FAIL);
+//Returns a double 
+void getDoubleFromInput(double *number) {
+	cout << "Enter a number" << endl;
+	if (cin >> *number) {
+		return;
 	}
-	cout << "The square root is: " << sqrt(number) << endl;
-	return static_cast<int>(ReturnValues::SUCCESS);
+	*number = -1; 
+}
+
+void printSquareRoot() {
+	double number = 0;
+	getDoubleFromInput(&number);
+	try {
+		if (number < 0) {
+			errorNegativeThrower();
+		}
+		cout << "The square root is: " << sqrt(number) << endl;
+	}
+	catch (errorCodes errorCode) {
+		cout << "The input cannot be square rooted " << endl;
+	}
 }
 
 int main() {
-	return printSquareRoot();
+	printSquareRoot();
+	return 0;
 }
-
