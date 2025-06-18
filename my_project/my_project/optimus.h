@@ -2,14 +2,16 @@
 #define MY_FOLD_H
 #include <iostream>
 
-constexpr int SUCCESS = 0;
-constexpr int TABLE_SIZE = 11;
+enum class ReturnValues : int {
+	FAIL = -1,
+	SUCCESS
+};
 
 using std::cin;
 using std::cout;
 using std::endl;
 
-//Prints the multiplication table
-void multiplicationTable();
+//True if the number is prime
+bool isPrimeNumber();
 
 #endif //MY_FOLD_H

@@ -1,15 +1,24 @@
 #include "optimus.h"
 
-void multiplicationTable() {
-	for (int i = 1; i <= TABLE_SIZE; i++) {
-		for (int j = 1; j <= TABLE_SIZE; j++) {
-			cout << " " << i * j;
-		}
-		cout << endl;
+//Returns an int 
+int getIntFromInput() {
+	int number = 0;
+	cout << "Enter a number" << endl;
+	cin >> number;
+	if (cin) {
+		return number;
+	}
+	return static_cast<int>(ReturnValues::FAIL);
+}
+
+bool isPrimeNumber() {
+	int number = getIntFromInput();
+	for (int i = 1; i <= number; i++) {
+		
 	}
 }
 
 int main() {
-	multiplicationTable();
-	return SUCCESS;
+	int returnValue = isPrimeNumber();
+	return returnValue;
 }
