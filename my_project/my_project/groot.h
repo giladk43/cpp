@@ -8,11 +8,12 @@ using std::cout;
 using std::endl;
 
 enum class ReturnValues : int {
-	FAIL = -1,
-	SUCCESS
+	SUCCESS = 0,
+	NOT_DOUBLE_FAIL,
+	NEGATIVE_FAIL
 };
 
 //Prints the root of the inputed number
-int root();
+int printSquareRoot();
 #endif //MY_GROOT_H
 
