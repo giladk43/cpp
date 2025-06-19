@@ -9,7 +9,8 @@ public:
 };
 
 //True if the number is prime
-void isPrimeNumber();
+bool isPrimeNumber(int number);
+
 int getIntFromInput();
 
 #endif //MY_OPTIMUS_H

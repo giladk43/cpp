@@ -24,10 +24,9 @@ int getIntFromInput() {
 	return number;
 }
 
-void isPrimeNumber() {
+bool isPrimeNumber(int number) {
 	bool is_prime = true;
 	try {
-		int number = getIntFromInput();
 		if (number <= 1) {
 			throw SmallerThanOneException();
 		}
@@ -37,9 +36,11 @@ void isPrimeNumber() {
 			}
 		}
 		if (is_prime) {
+			return true;
 			cout << "The number is prime" << endl;
 		}
 		else {
+			return false;
 			cout << "The number is not prime" << endl;
 		}
 	}
