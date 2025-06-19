@@ -7,6 +7,6 @@ enum class errorCodes : int {
 };
 
 //True if the number is prime
-bool isPrimeNumber();
+void isPrimeNumber();
 
 #endif //MY_FOLD_H
