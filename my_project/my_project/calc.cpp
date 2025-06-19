@@ -9,8 +9,7 @@ using std::endl;
 
 
 //Exception for an invalid input
-class InvalidInputException : public std::exception
-{
+class InvalidInputException : public std::exception {
 public:
 	const char* what() const noexcept override { return "Invalid input excepetion found"; }
 };
@@ -44,16 +43,13 @@ void useCalculator() {
 		char operation = getCharFromInput();
 		cout << myCalc.calculate(num1, operation, num2);
 	}
-	catch (const InvalidInputException& exception)
-	{
+	catch (const InvalidInputException& exception) {
 		cout << "The input is not valid" << endl;
 	}
-	catch (const InvalidOperationException& exception)
-	{
+	catch (const InvalidOperationException& exception) {
 		std::cout << "The input for the type of operation is not valid" << std::endl;
 	}
-	catch (const DivideByZeroException& exception)
-	{
+	catch (const DivideByZeroException& exception) {
 		std::cout << "Cannot divide by 0" << std::endl;
 	}
 }

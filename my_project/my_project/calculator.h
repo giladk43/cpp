@@ -1,7 +1,7 @@
-#ifndef MY_CALC_CLASS_H
-#define MY_CALC_CLASS_H
+#ifndef MY_CALCULATOR_CLASS_H
+#define MY_CALCULATOR_CLASS_H
 
-class Calc {
+class Calculator {
 public:
 	// Calculation
 	double calculate(double num1, char operation, double num2);
@@ -18,17 +18,15 @@ private:
 };
 
 //Exception for division with zero
-class DivideByZeroException : public std::exception
-{
+class DivideByZeroException : public std::exception {
 public:
 	const char* what() const noexcept override { return "Divided by zero"; }
 };
 
 
-//Exception for a non known operation input
-class InvalidOperationException : public std::exception
-{
+//Exception for an unknown operation input
+class InvalidOperationException : public std::exception {
 public:
 	const char* what() const noexcept override { return "Invalid operation excepetion found"; }
 };
-#endif //MY_CALC_CLASS_H
+#endif //MY_CALCULATOR_CLASS_H
