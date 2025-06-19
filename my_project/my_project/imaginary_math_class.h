@@ -20,7 +20,7 @@ public:
 	ImaginaryNumber operator+(const ImaginaryNumber& other);
 	ImaginaryNumber operator-(const ImaginaryNumber& other);
 	ImaginaryNumber operator*(const ImaginaryNumber& other);
-	ImaginaryNumber& operator==(const ImaginaryNumber& other);
+	bool operator==(const ImaginaryNumber& other);
 
 	//Print Number
 	void printImaginary();
