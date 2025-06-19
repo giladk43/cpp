@@ -1,5 +1,9 @@
 #include <iostream>
-#include "fold.h"
+
+constexpr int TABLE_SIZE = 11;
+
+//Prints the multiplication table
+void multiplicationTable();
 
 using std::cin;
 using std::cout;
