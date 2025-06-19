@@ -14,7 +14,7 @@ public:
 	const char* what() const noexcept override { return "Invalid input excepetion found"; }
 };
 
-//Exception for a negative number
+//Exception for a number smaller than one
 class SmallerThanOneException : public std::exception
 {
 public:
