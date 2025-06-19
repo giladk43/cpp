@@ -1,12 +1,7 @@
-#ifndef MY_FOLD_H
-#define MY_FOLD_H
-#include <iostream>
-
-enum class errorCodes : int {
-	NEGATIVE_FAIL
-};
+#ifndef MY_OPTIMUS_H
+#define MY_OPTIMUS_H
 
 //True if the number is prime
 void isPrimeNumber();
 
-#endif //MY_FOLD_H
+#endif //MY_OPTIMUS_H
