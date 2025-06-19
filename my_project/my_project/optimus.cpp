@@ -7,13 +7,6 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-//Exception for an invalid input
-class InvalidInputException : public std::exception
-{
-public:
-	const char* what() const noexcept override { return "Invalid input excepetion found"; }
-};
-
 //Exception for a number smaller than one
 class SmallerThanOneException : public std::exception
 {
@@ -58,7 +51,8 @@ void isPrimeNumber() {
 	}
 }
 
+/*
 int main() {
 	isPrimeNumber();
 	return 0;
-}
+} */

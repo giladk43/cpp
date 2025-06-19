@@ -1,12 +1,15 @@
-#ifndef MY_FOLD_H
-#define MY_FOLD_H
-#include <iostream>
+#ifndef MY_OPTIMUS_H
+#define MY_OPTIMUS_H
 
-enum class errorCodes : int {
-	NEGATIVE_FAIL
+//Exception for an invalid input
+class InvalidInputException : public std::exception
+{
+public:
+	const char* what() const noexcept override { return "Invalid input excepetion found"; }
 };
 
 //True if the number is prime
 void isPrimeNumber();
+int getIntFromInput();
 
-#endif //MY_FOLD_H
+#endif //MY_OPTIMUS_H
