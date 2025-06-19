@@ -44,3 +44,12 @@ ImaginaryNumber ImaginaryNumber::operator-(const ImaginaryNumber& other) {
 ImaginaryNumber ImaginaryNumber::operator*(const ImaginaryNumber& other) {
 	return ImaginaryNumber((m_real * other.m_real - m_imaginary * other.m_imaginary), (m_real * other.m_imaginary + m_imaginary * other.m_real));
 }
+
+bool ImaginaryNumber::operator==(const ImaginaryNumber& other) {
+	return ((m_real == other.m_real) && (m_imaginary == other.m_imaginary));
+}
+
+//Print Function
+void ImaginaryNumber::printImaginary() {
+	std::cout << "The imaginary number is " + m_real + '+' + m_imaginary;
+}
