@@ -1,14 +1,11 @@
 #include <iostream>
 
-namespace {
-	constexpr int TABLE_SIZE = 11;
-}
-
-
-
 using std::cin;
 using std::cout;
 using std::endl;
+
+namespace {
+constexpr int TABLE_SIZE = 11;
 
 //Prints the multiplication table
 void multiplicationTable() {
@@ -19,6 +16,8 @@ void multiplicationTable() {
 		cout << endl;
 	}
 }
+} //namespace
+
 
 int main() {
 	multiplicationTable();
