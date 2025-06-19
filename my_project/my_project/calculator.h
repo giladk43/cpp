@@ -17,15 +17,17 @@ private:
 	double divide(double num1, double num2);
 };
 
+
+class CalculatorException : public std::exception {};
+
 //Exception for division with zero
-class DivideByZeroException : public std::exception {
+class DivideByZeroException : public CalculatorException {
 public:
 	const char* what() const noexcept override { return "Divided by zero"; }
 };
 
-
 //Exception for an unknown operation input
-class InvalidOperationException : public std::exception {
+class InvalidOperationException : public CalculatorException {
 public:
 	const char* what() const noexcept override { return "Invalid operation excepetion found"; }
 };

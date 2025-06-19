@@ -1,6 +1,6 @@
 #include <exception> // for std::exception
 #include <iostream>
-#include "calc_class.h"
+#include "calculator.h"
 
 double Calculator::add(double num1, double num2) {
 	return num1 + num2;
