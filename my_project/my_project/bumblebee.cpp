@@ -50,6 +50,7 @@ void printArray(int primeArray[], int arraySize) {
 	}
 }
 
+//Main function that combines all of the other functions together
 void fillAndPrintArray() {
 	try {
 		int arraySize = getIntFromInput();
