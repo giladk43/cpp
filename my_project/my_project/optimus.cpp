@@ -14,15 +14,6 @@ public:
 	const char* what() const noexcept override { return "Smaller than 1 excepetion found";}
 };
 
-//Returns an int 
-int getIntFromInput() {
-	int number = 0;
-	cout << "Enter a number" << endl;
-	if (!(cin >> number)) {
-		throw InvalidInputException();
-	}
-	return number;
-}
 
 bool isPrimeNumber(int number) {
 	bool is_prime = true;
@@ -37,18 +28,16 @@ bool isPrimeNumber(int number) {
 		}
 		if (is_prime) {
 			return true;
-			cout << "The number is prime" << endl;
+			//cout << "The number is prime" << endl;
 		}
 		else {
 			return false;
-			cout << "The number is not prime" << endl;
+			//cout << "The number is not prime" << endl;
 		}
 	}
 	catch (const SmallerThanOneException& exception) {
-		cout << "The input is smaller or equal to 1 and not prime" << endl;
-	}
-	catch (const InvalidInputException& exception) {
-		cout << "The input is not valid" << endl;
+		return false;
+		//cout << "The input is smaller or equal to 1 and not prime" << endl;
 	}
 }
 

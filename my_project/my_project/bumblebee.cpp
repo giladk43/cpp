@@ -1,8 +1,6 @@
 #include <exception> // for std::exception
 #include <iostream>
 #include "optimus.h"
-#include "bumblebee.h"
-
 
 using std::cin;
 using std::cout;
@@ -14,27 +12,64 @@ class ArraySizeSmallException : public std::exception
 public:
 	const char* what() const noexcept override { return "The array size is too small excepetion found"; }
 };
+//Exception for an invalid input
+class InvalidInputException : public std::exception
+{
+public:
+	const char* what() const noexcept override { return "Invalid input excepetion found"; }
+};
 
+//Returns an int 
+int getIntFromInput() {
+	int number = 0;
+	cout << "Enter the size of the array number" << endl;
+	if (!(cin >> number)) {
+		throw InvalidInputException();
+	}
+	return number;
+}
 
-
-void fillArray(int arraySize, int* array[]) {
-	int index = 0; // Will go up by one everytime in the while
+// Fills the array with prime numbers
+void fillArray(int arraySize, int primeArray[]) {
+	int index = 1; // Will go up by one everytime in the while
 	int indexArray = 0;
 	while (indexArray < arraySize) {
 		if (isPrimeNumber(index)) {
-			*array[indexArray] = index;
+			primeArray[indexArray] = index;
 			indexArray++;
 		}
 		index++;
 	}
 }
 
-void printArray(int array[]) {
+//Prints the array
+void printArray(int primeArray[], int arraySize) {
+	cout << "The prime numbers until that point are:" << endl;
+	for (int i = 0; i < arraySize; i++) {
+		cout << primeArray[i] << endl;
+	}
+}
 
+void fillAndPrintArray() {
+	try {
+		int arraySize = getIntFromInput();
+		if (arraySize <= 0) {
+			throw ArraySizeSmallException();
+		}
+		int* primeArray = new int[arraySize];
+		fillArray(arraySize, primeArray);
+		printArray(primeArray, arraySize);
+		delete[] primeArray;
+	}
+	catch (const InvalidInputException& exception) {
+		cout << "The input is not valid" << endl;
+	}
+	catch (const ArraySizeSmallException& exception) {
+		cout << "This number cannot be the input for the size of an array" << endl;
+	}
 }
 
 int main() {
-	int test[5] = { 0 };
-	cout << test[0];
+	fillAndPrintArray();
 	return 0;
 }
