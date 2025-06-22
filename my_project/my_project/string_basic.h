@@ -3,7 +3,7 @@
 
 class String {
 public:
-	String(char* string);
+	String(const char* string);
 	String(const String& other);
 
 	//Get Functions
@@ -16,7 +16,7 @@ public:
 	void printString();
 
 	//Destructor
-	~String() { free; std::puts("~STRING"); };
+	~String() {free(m_string); std::puts("Freed String"); };
 
 
 private:
