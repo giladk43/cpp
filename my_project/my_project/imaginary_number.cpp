@@ -1,6 +1,10 @@
 #include <exception> // for std::exception
 #include <iostream>
-#include "imaginary_math_class.h"
+#include "imaginary_number.h"
+
+using std::cin;
+using std::cout;
+using std::endl;
 
 //In it Functions
 ImaginaryNumber::ImaginaryNumber() : m_real(0), m_imaginary(0){
@@ -51,5 +55,6 @@ bool ImaginaryNumber::operator==(const ImaginaryNumber& other) {
 
 //Print Function
 void ImaginaryNumber::printImaginary() {
-	std::cout << "The imaginary number is " + m_real + '+' + m_imaginary;
+	cout << "The imaginary number is " << m_real << " + " << m_imaginary << 'i' << endl;
 }
+

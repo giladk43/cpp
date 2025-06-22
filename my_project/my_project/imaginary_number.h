@@ -26,14 +26,11 @@ public:
 	void printImaginary();
 
 	//Destructor
-	~ImaginaryNumber();
+	//~ImaginaryNumber() { std::puts("~Imaginary"); };
 
 private:
 	int m_real;
 	int m_imaginary;
 };
-
-
-class ImaginaryException : public std::exception {};
 
 #endif //MY_IMAGINARY_NUMBER_H
