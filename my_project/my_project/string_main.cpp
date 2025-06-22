@@ -1,10 +1,5 @@
-#include <exception> // for std::exception
 #include <iostream>
 #include "string_basic.h"
-
-using std::cin;
-using std::cout;
-using std::endl;
 
 int main() {
 	char x[5] = { 'h', 'i', 'i', 'i', '\0' };
