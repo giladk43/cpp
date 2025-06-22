@@ -1,10 +1,10 @@
 #ifndef MY_STRING_H
 #define MY_STRING_H
 
-class STRING {
+class String {
 public:
-	STRING(char* string);
-	STRING(const STRING& other);
+	String(char* string);
+	String(const String& other);
 
 	//Get Functions
 	char* getString() const;
@@ -12,8 +12,11 @@ public:
 	//Set Functions
 	void setString(char* string);
 
+	//Print Function
+	void printString();
+
 	//Destructor
-	~STRING() { free; std::puts("~STRING"); };
+	~String() { free; std::puts("~STRING"); };
 
 
 private:
